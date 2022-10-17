@@ -10,13 +10,13 @@ import numpy as np
 
 data_path = Path('../Dataset')
 
-train_path = data_path / 'instrument_1_4_training'
+train_path = data_path / 'training'
 
 cropped_train_path = data_path / 'cropped_train'
 
-original_height, original_width = 1080, 1920
-height, width = 1024, 1280
-h_start, w_start = 28, 320
+original_height, original_width = 1280, 1024
+height, width = 1280, 1024
+h_start, w_start = 0, 0
 
 binary_factor = 255
 parts_factor = 85
@@ -24,8 +24,8 @@ instrument_factor = 32
 
 
 if __name__ == '__main__':
-    for instrument_index in range(1, 5):
-        instrument_folder = 'instrument_dataset_' + str(instrument_index)
+    for seq_i in range(1, 12):
+        instrument_folder = 'seq_' + str(seq_i)
 
         (cropped_train_path / instrument_folder / 'images').mkdir(exist_ok=True, parents=True)
 
@@ -38,10 +38,10 @@ if __name__ == '__main__':
         instrument_mask_folder = (cropped_train_path / instrument_folder / 'instruments_masks')
         instrument_mask_folder.mkdir(exist_ok=True, parents=True)
 
-        mask_folders = list((train_path / instrument_folder / 'ground_truth').glob('*'))
+        mask_folders = [train_path / instrument_folder / 'labels']
         # mask_folders = [x for x in mask_folders if 'Other' not in str(mask_folders)]
 
-        for file_name in tqdm(list((train_path / instrument_folder / 'left_frames').glob('*'))):
+        for file_name in tqdm(list((train_path / instrument_folder / 'left_frames').glob('*.png'))):
             img = cv2.imread(str(file_name))
             old_h, old_w, _ = img.shape
 

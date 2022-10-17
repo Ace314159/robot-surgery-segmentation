@@ -38,10 +38,10 @@ def main():
     arg('--n-epochs', type=int, default=100)
     arg('--lr', type=float, default=0.0001)
     arg('--workers', type=int, default=12)
-    arg('--train_crop_height', type=int, default=1024)
-    arg('--train_crop_width', type=int, default=1280)
-    arg('--val_crop_height', type=int, default=1024)
-    arg('--val_crop_width', type=int, default=1280)
+    arg('--train_crop_height', type=int, default=1280)
+    arg('--train_crop_width', type=int, default=1024)
+    arg('--val_crop_height', type=int, default=1280)
+    arg('--val_crop_width', type=int, default=1024)
 
     args = parser.parse_args()
 
