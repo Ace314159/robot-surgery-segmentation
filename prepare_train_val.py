@@ -1,3 +1,4 @@
+import itertools
 from prepare_data import data_path
 
 
@@ -12,7 +13,7 @@ def get_split(fold):
     train_file_names = []
     val_file_names = []
 
-    for instrument_id in range(1, 12):
+    for instrument_id in itertools.chain(range(1, 13 + 1), range(17, 24 + 1)):
         if instrument_id in folds[fold]:
             val_file_names += list((train_path / ('seq_' + str(instrument_id)) / 'images').glob('*'))
         else:
