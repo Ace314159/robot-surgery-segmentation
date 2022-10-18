@@ -14,8 +14,8 @@ train_path = data_path / 'training'
 
 cropped_train_path = data_path / 'cropped_train'
 
-original_height, original_width = 1280, 1024
-height, width = 1280, 1024
+original_height, original_width = 1024, 1280
+height, width = 1024, 1280
 h_start, w_start = 0, 0
 
 binary_factor = 255
