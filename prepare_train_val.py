@@ -2,10 +2,10 @@ from prepare_data import data_path
 
 
 def get_split(fold):
-    folds = {0: [1, 2, 3],
-             1: [4, 5, 6],
-             2: [7, 8, 9],
-             3: [10, 11, 12]}
+    folds = {0: [1, 2, 3, 17, 18],
+             1: [4, 5, 6, 19, 20],
+             2: [7, 9, 10, 21, 22],
+             3: [11, 12, 13, 23, 24]}
 
     train_path = data_path / 'cropped_train'
 
