@@ -24,7 +24,7 @@ instrument_factor = 32
 
 
 if __name__ == '__main__':
-    for seq_i in range(1, 12):
+    for seq_i in range(1, 13):
         instrument_folder = 'seq_' + str(seq_i)
 
         (cropped_train_path / instrument_folder / 'images').mkdir(exist_ok=True, parents=True)
